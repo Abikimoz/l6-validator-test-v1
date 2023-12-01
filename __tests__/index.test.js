@@ -26,7 +26,9 @@ test('task2', () => {
   assert.equal(schema.isValid(4), false);
   assert.equal(schema.isValid({ lesson: 'programming', date: '11.02.12', grade: 3 }), true);
   assert.equal(schema.isValid({ lesson: 'programming', date: '11.02.12' }), false);
-  assert.equal(schema.isValid({ lesson: 'programming', date: '11.02.12', grade: 3, playingGames: true}), false);
+  assert.equal(schema.isValid({
+    lesson: 'programming', date: '11.02.12', grade: 3, playingGames: true,
+  }), false);
   assert.equal(schema.isValid({ lesson: 'programming', date: '111.02.12', grade: 3 }), false);
   assert.equal(schema.isValid({ lesson: 'programming', date: '11.02.12', grade: 1 }), false);
   assert.equal(schema.isValid({ lesson: 'programming', date: '11.02.32', grade: 5 }), true);
