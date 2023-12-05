@@ -11,4 +11,9 @@ export default class ArraySchema {
     const validator = (arr) => arr.every((item) => Number.isInteger(item));
     return new ArraySchema([validator, ...this.validators]);
   }
+
+  custom(val) {
+    const validator = (arr) => arr.every((item) => val(item));
+    return new ArraySchema([validator, ...this.validators]);
+  }
 }
